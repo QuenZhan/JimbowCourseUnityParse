@@ -34,14 +34,16 @@ public class JCControllerItemsTable : MonoBehaviour {
 
 	[ContextMenu("download")]
 	public void download(){
+		Debug.Log("download");
 		var query =new ParseQuery<JCModelItem>();
 		query.FindAsync().ContinueWith(t =>
 		{
-			var items=JCControllerItemsTable.instance.items;
-		    items=new List<JCModelItem>(t.Result);
+			// Debug.Log(t.Exception.ToString());
+		    var items=new List<JCModelItem>(t.Result);
 		    foreach(var e in items){
 		    	e.init();
 		    }
+		    JCControllerItemsTable.instance.items=items;
 		});
 	}
 	[ContextMenu("upload")]
