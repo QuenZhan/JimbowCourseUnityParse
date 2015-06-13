@@ -16,6 +16,11 @@ public class JCRescouceManager : MonoBehaviour {
 		default:return Knob;
 		}
 	}
+	public Sprite spriteRandom{get{
+
+		return TRNTH.U.choose<Sprite>(Background,CheckMark,Knob);
+	}
+	}
 	void Awake(){
 		instance=this;
 	}

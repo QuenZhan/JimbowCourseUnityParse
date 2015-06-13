@@ -9,6 +9,7 @@ public class JCModelItem:ParseObject,IJCModelItem{
 	[SerializeField]Sprite _icon;
 	[SerializeField]int _amount;
 
+
 	[ParseFieldName("name")]
 	public string name{
 	  	get{
@@ -44,5 +45,12 @@ public class JCModelItem:ParseObject,IJCModelItem{
 	  		SetProperty<int>(value,"amount");
 	  	 	_amount=value;
 	  	 }
+	}
+	public void init(){
+		this._name=GetProperty<string>("name");
+		this._description=GetProperty<string>("description");
+		this._amount=GetProperty<int>("amount");
+		var spriteName=GetProperty<string>("icon");
+		this._icon=JCRescouceManager.instance.spriteByName(spriteName);
 	}
 }
