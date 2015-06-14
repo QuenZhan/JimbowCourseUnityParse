@@ -36,6 +36,7 @@ public class JCControllerItemsTable : MonoBehaviour {
 	public void download(){
 		Debug.Log("download");
 		var query =new ParseQuery<JCModelItem>();
+		// var str;
 		query.FindAsync().ContinueWith(t =>
 		{
 			// Debug.Log(t.Exception.ToString());
@@ -43,6 +44,7 @@ public class JCControllerItemsTable : MonoBehaviour {
 		    foreach(var e in items){
 		    	e.init();
 		    }
+		    // str
 		    JCControllerItemsTable.instance.items=items;
 		});
 	}
