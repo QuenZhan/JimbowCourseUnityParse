@@ -6,4 +6,6 @@ public interface IJCModelItem{
 	string description{get;set;}
 	Sprite icon{get;set;}
 	int amount{get;set;}
+	int cost{get;set;}
 }
+

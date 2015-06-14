@@ -46,6 +46,14 @@ public class JCModelItem:ParseObject,IJCModelItem{
 	  	 	_amount=value;
 	  	 }
 	}
+	public int cost{
+		get{
+			return 0;
+		}
+		set{
+			;
+		}
+	}
 	public void init(){
 		this._name=GetProperty<string>("name");
 		this._description=GetProperty<string>("description");
